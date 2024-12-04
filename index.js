@@ -16,7 +16,8 @@ const db = admin.firestore(); // إنشاء اتصال بقاعدة البيان
 const codesCollection = db.collection("codes"); // تعريف مجموعة الأكواد
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000; // Render يوفر المنفذ في process.env.PORT
+
 
 // إعدادات Express
 app.use(bodyParser.json());
@@ -137,16 +138,7 @@ bot.on("message", async (msg) => {
   }
 });
 
-// رد على زر النسخ
-bot.on("callback_query", (query) => {
-  const chatId = query.message.chat.id;
-  const data = query.data;
 
-  if (data.startsWith("copy_")) {
-    const codeValue = data.replace("copy_", "");
-    bot.sendMessage(chatId, `✅ تم نسخ الكود: ${codeValue}`);
-  }
-});
 
 // ** وظيفة لتنظيف النصوص العربية للتعامل مع التشكيلات والمسافات **
 function normalizeArabicText(text) {

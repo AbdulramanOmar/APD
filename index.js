@@ -4,7 +4,7 @@ const admin = require("firebase-admin");
 const TelegramBot = require("node-telegram-bot-api");
 
 // توكن البوت
-const botToken = "7795919593:AAEC98leU_NwVRjsj-zPZTx9-LkcKRslcLM";
+const botToken = "8150745273:AAHgsBSGUElK_a9A7gddqPpbTMvNSPClFGE";
 const bot = new TelegramBot(botToken, { polling: true });
 
 // إعداد Firebase Admin
